@@ -1,0 +1,17 @@
+{
+  "name": "prem-stats",
+  "description": "An AngularJS app for displaying premier league stats.",
+  "version": "0.0.0",
+  "homepage": "https://github.com/archy-bold/prem-stats",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-loader": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "html5-boilerplate": "~5.2.0",
+    "bootstrap-sass": "~3.3.5",
+    "angular-bootstrap": "~0.13.3"
+  }
+}
