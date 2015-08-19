@@ -15,31 +15,6 @@ angular.module('premStatsApp.teamView', ['ngRoute'])
 	$scope.lastMatch = null;
 	$scope.team = null;
 
-	function parseMatch(apiMatch){
-		var dateParts = apiMatch.match_formatted_date.split('.');
-		var timeParts = apiMatch.match_time.split(':');
-		var day = parseInt(dateParts[0]);
-		var month = parseInt(dateParts[1]) - 1;
-		var year = parseInt(dateParts[2]);
-		var hour = parseInt(timeParts[0]);
-		var minute = parseInt(timeParts[1]);
-
-		return {
-			homeTeam: {
-				id: parseInt(apiMatch.match_localteam_id, 10),
-				name: apiMatch.match_localteam_name
-			},
-			awayTeam: {
-				id: parseInt(apiMatch.match_visitorteam_id, 10),
-				name: apiMatch.match_visitorteam_name
-			},
-			scoreHome: parseInt(apiMatch.match_localteam_score, 10),
-			scoreAway: parseInt(apiMatch.match_visitorteam_score, 10),
-			date: new Date(year, month, day, hour, minute)
-		};
-	}
-
-	// Get the upcoming fixture.
 	footballAPIService.getFixtures().success(function (response) {
 		for (var i = 0; i < response.matches.length; i++) {
 			var match = response.matches[i];
@@ -47,7 +22,7 @@ angular.module('premStatsApp.teamView', ['ngRoute'])
 			var homeTeamId = parseInt(match.match_localteam_id);
 			var awayTeamId = parseInt(match.match_visitorteam_id);
 			if (homeTeamId == $scope.id || awayTeamId == $scope.id){
-				$scope.nextMatch = parseMatch(match);
+				$scope.nextMatch = footballAPIService.formatMatch(match);
 				break;
 			}
 		};
@@ -64,7 +39,7 @@ angular.module('premStatsApp.teamView', ['ngRoute'])
 			var homeTeamId = parseInt(match.match_localteam_id);
 			var awayTeamId = parseInt(match.match_visitorteam_id);
 			if (homeTeamId == $scope.id || awayTeamId == $scope.id){
-				$scope.lastMatch = parseMatch(match);
+				$scope.lastMatch = footballAPIService.formatMatch(match);
 			}
 		};
 	});

@@ -14,15 +14,31 @@
 <div class="container">
 	<div ng-show="nextMatch">
 		<h2>Next Match</h2>
-		<p>
-			<a href="#/team/{{nextMatch.homeTeam.id}}">{{nextMatch.homeTeam.name}}</a> v <a href="#/team/{{nextMatch.awayTeam.id}}">{{nextMatch.awayTeam.name}}</a><br>
+		<p class="match-small">
+			<a href="#/team/{{nextMatch.homeTeam.id}}">
+				{{nextMatch.homeTeam.name}}
+				<img src="{{nextMatch.homeTeam.badge}}">
+			</a> v
+			<a href="#/team/{{nextMatch.awayTeam.id}}">
+				<img src="{{nextMatch.awayTeam.badge}}">
+				{{nextMatch.awayTeam.name}}
+			</a><br>
 			<span>{{nextMatch.date | date:'EEEE d MMMM HH:mm':'+0200'}}</span>
 		</p>
 	</div>
 	<div ng-show="lastMatch">
 		<h2>Last Match</h2>
-		<p>
-			<a href="#/team/{{lastMatch.homeTeam.id}}">{{lastMatch.homeTeam.name}}</a> {{lastMatch.scoreHome}} - {{lastMatch.scoreAway}} <a href="#/team/{{lastMatch.awayTeam.id}}">{{lastMatch.awayTeam.name}}</a><br>
+		<p class="match-small">
+			<a href="#/team/{{lastMatch.homeTeam.id}}">
+				{{lastMatch.homeTeam.name}}
+				<img src="{{lastMatch.homeTeam.badge}}">
+			</a> 
+			{{lastMatch.scoreHome}} - 
+			{{lastMatch.scoreAway}} 
+			<a href="#/team/{{lastMatch.awayTeam.id}}">
+				<img src="{{lastMatch.awayTeam.badge}}">
+				{{lastMatch.awayTeam.name}}
+			</a><br>
 			<span>{{lastMatch.date | date:'EEEE d MMMM HH:mm':'+0200'}}</span>
 		</p>
 	</div>

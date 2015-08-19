@@ -6070,3 +6070,7 @@ button.close {
 
 .jumbotron h1 img {
   vertical-align: baseline; }
+
+.match-small img {
+  height: 16px;
+  width: auto; }
