@@ -76,22 +76,7 @@ angular.module('premStatsApp.teamView', ['ngRoute'])
 			var teamId = parseInt(team.stand_team_id, 10);
 
 			if (teamId == $scope.id){
-	        	$scope.team = {
-	        		Team: {
-	                    id: teamId,
-	        			name: team.stand_team_name
-	        		},
-	        		position: parseInt(team.stand_position, 10),
-	        		played: parseInt(team.stand_overall_gp, 10),
-	        		won: parseInt(team.stand_overall_w, 10),
-	        		drawn: parseInt(team.stand_overall_d, 10),
-	        		lost: parseInt(team.stand_overall_l, 10),
-	        		goalsScored: parseInt(team.stand_overall_gs, 10),
-	        		goalsAgainst: parseInt(team.stand_overall_ga, 10),
-	        		goalDifference: parseInt(team.stand_gd, 10),
-	        		points: parseInt(team.stand_points, 10),
-	        		form: team.stand_recent_form
-	        	}
+	        	$scope.team = footballAPIService.formatStanding(team);
 			}
         }
 	});

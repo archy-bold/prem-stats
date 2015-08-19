@@ -1,3 +1,25 @@
 @charset "UTF-8";
 
 @import "bootstrap";
+
+.table{
+	.club-badge{
+		display: inline-block;
+		height: 24px;
+		width: 30px;
+		text-align: center;
+
+		img{
+			height: 100%;
+			width: auto;
+		}
+	}
+}
+
+.jumbotron{
+	h1{
+		img{
+			vertical-align: baseline;
+		}
+	}
+}

@@ -1,6 +1,9 @@
 <div class="jumbotron" ng-show="team">
 	<div class="container">
-		<h1>{{team.Team.name}}</h1>
+		<h1>
+			<img src="{{team.Team.badge}}">
+			{{team.Team.name}}
+		</h1>
 		<p>
 			<strong>League Position:</strong> {{team.position}}<br>
 			<strong>Form:</strong> {{team.form}}

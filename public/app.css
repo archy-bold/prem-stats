@@ -6058,3 +6058,15 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+
+.table .club-badge {
+  display: inline-block;
+  height: 24px;
+  width: 30px;
+  text-align: center; }
+  .table .club-badge img {
+    height: 100%;
+    width: auto; }
+
+.jumbotron h1 img {
+  vertical-align: baseline; }

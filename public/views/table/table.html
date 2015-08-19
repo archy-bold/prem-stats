@@ -16,7 +16,12 @@
 		  <tr ng-repeat="team in standings | filter: searchFilter">
 		    <td>{{team.position}}</td>
 		    <td>
-		      <a href="#/team/{{team.Team.id}}">{{team.Team.name}}</a>
+		      <a href="#/team/{{team.Team.id}}">
+		      	<span class="club-badge">
+		      		<img ng-show="team.Team.badge" src="{{team.Team.badge}}">
+		      	</span>
+		      	{{team.Team.name}}
+		      </a>
 		    </td>
 		    <td>{{team.played}}</td>
 		    <td>{{team.goalDifference}}</td>
