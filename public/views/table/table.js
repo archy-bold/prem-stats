@@ -43,7 +43,6 @@ angular.module('premStatsApp.tableView', ['ngRoute'])
         	$scope.standings.push(obj);
         	
         }
-        var standings = response.teams;
     });
 
 });
