@@ -10,8 +10,11 @@ $action = $_GET['action'];
 
 $fullUrl = $url . "?Action=$action&APIKey=$key";
 
-if (array_key_exists('comp_id', $_GET)){
-	$fullUrl .= '&comp_id=' . $_GET['comp_id'];
+// Append get variables.
+foreach ($_GET as $key => $value) {
+	if ($key != 'action'){
+		$fullUrl .= '&' . $key . '=' . $value;
+	}
 }
 
 echo file_get_contents($fullUrl);
