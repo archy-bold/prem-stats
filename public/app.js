@@ -4,6 +4,7 @@
 angular.module('premStatsApp', [
   'ngRoute',
   'premStatsApp.tableView',
+  'premStatsApp.tableView',
   'premStatsApp.services',
   'premStatsApp.version',
   'ui.bootstrap'
